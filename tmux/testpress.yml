@@ -1,0 +1,45 @@
+# /home/veera/.config/tmuxinator/testpress.yml
+
+name: testpress
+root: ~/workspace/testpress_python/testpress
+
+windows:
+  - server:
+      panes:
+        - shell_command:
+            - source ~/workspace/testpress_py3/bin/activate
+            - python manage.py runserver
+
+  - shell:
+      panes:
+        - shell_command:
+            - source ~/workspace/testpress_py3/bin/activate
+            - python manage.py shell_plus
+
+  - git:
+      panes:
+        - shell_command:
+            - source ~/workspace/testpress_py3/bin/activate
+
+  - test:
+      panes:
+        - shell_command:
+            - source ~/workspace/testpress_py3/bin/activate
+
+  - celery:
+      panes:
+        - shell_command:
+            - source ~/workspace/testpress_py3/bin/activate
+            - celery
+
+  - terminal:
+      panes:
+        - shell_command:
+            - source ~/workspace/testpress_py3/bin/activate
+
+  - antigravity:
+      panes:
+        - shell_command:
+            - agy
+
+
